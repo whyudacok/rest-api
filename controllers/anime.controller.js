@@ -251,8 +251,8 @@ exports.epsMirror = async (req, res) => {
     obj.title = $(".venutama > h1").text();
     obj.baseUrl = fullUrl;
     obj.id = fullUrl.replace(url.baseUrl, "");
-    const streamLink = $('#pembed > div > iframe').attr('src')
-    obj.streamLink = streamLink
+    const streamLink = $('#pembed > div > iframe').attr('src');
+    obj.streamLink = streamLink;
     obj.link_stream = await episodeHelper.get(streamLink);
     res.send(obj);
   } catch (error) {
@@ -260,6 +260,7 @@ exports.epsMirror = async (req, res) => {
     errors.requestFailed(req, res, err);
   }
 }
+
 
 function _batchQualityFunction(num, res) {
   const $ = cheerio.load(res);
