@@ -183,11 +183,11 @@ exports.epsAnime = async (req, res) => {
     obj.id = fullUrl.replace(url.baseUrl, "");
     const streamLink = streamElement.find("iframe").attr("src");
     //
-     const streamLinkResponse = await Axios.get(streamLink)
-     const stream$ = cheerio.load(streamLinkResponse.data)
-     const sl = stream$('body').find('script').html().search('sources')
-     const endIndex = stream$('body').find('script').eq(0).html().indexOf('}]',sl)
-     const val = stream$('body').find('script').eq(0).html().substr(sl,endIndex - sl+1).replace(`sources: [{'file':'`,'')
+    // const streamLinkResponse = await Axios.get(streamLink)
+    // const stream$ = cheerio.load(streamLinkResponse.data)
+    // const sl = stream$('body').find('script').html().search('sources')
+    // const endIndex = stream$('body').find('script').eq(0).html().indexOf('}]',sl)
+    // const val = stream$('body').find('script').eq(0).html().substr(sl,endIndex - sl+1).replace(`sources: [{'file':'`,'')
     // console.log(val);
     // console.log(val.replace(`','type':'video/mp4'}`,''));
     //
