@@ -188,8 +188,8 @@ exports.epsAnime = async (req, res) => {
      const sl = stream$('body').find('script').html().search('sources')
      const endIndex = stream$('body').find('script').eq(0).html().indexOf('}]',sl)
      const val = stream$('body').find('script').eq(0).html().substr(sl,endIndex - sl+1).replace(`sources: [{'file':'`,'')
-     console.log(val);
-     console.log(val.replace(`','type':'video/mp4'}`,''));
+    // console.log(val);
+    // console.log(val.replace(`','type':'video/mp4'}`,''));
     //
     obj.link_stream = await episodeHelper.get(streamLink);
     console.log($('#pembed > div > iframe').attr('src'));
